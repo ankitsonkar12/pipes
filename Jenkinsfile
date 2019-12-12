@@ -13,5 +13,13 @@ pipeline{
                 git ' https://github.com/ankitsonkar12/pipes.git' 
             }
         }
+        stage('Complile'){
+         def mvnHome = tool 'm3'
+         dir('maventdd') {
+             sh "'${mvnHome}/bin/mvn' clean compile"
+         }
+        
+    }
+
     }
 }
