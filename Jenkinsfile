@@ -16,7 +16,7 @@ pipeline{
 
 
         stage('Complile'){
-            step{
+            steps{
                 def mvnHome = tool 'm3'
          dir('maventdd') {
              sh "'${mvnHome}/bin/mvn' clean compile"
