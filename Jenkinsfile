@@ -10,17 +10,16 @@ pipeline{
         stage('checkout')
         {
             steps{
-                git ' https://github.com/ankitsonkar12/pipes.git' 
+                checkout scm
             }
         }
 
 
         stage('Complile'){
             steps{
+                mvn clean compile
                 
-            dir('maventdd') {
-             sh "'${m3}/bin/mvn' clean compile"
-            }
+            
          
          }
         
