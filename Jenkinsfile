@@ -7,10 +7,34 @@ pipeline{
         pollSCM("* * * * *")
     }
     stages{
-        stage(checkout){
+        stage('checkout')
+        {
             steps{
                 checkout scm
             }
         }
+
+
+        stage('Complile'){
+            steps{
+                mvn clean compile
+                
+            
+         
+         }
+        
+    }
+
+
+        
+
+
+
+
+
+
+        
+    
+
     }
 }
